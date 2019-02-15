@@ -36,6 +36,25 @@ else{
 }
 
 function calculaMedia(n1, n2, n3){
-	var valor = (n1 + n2 + n3) / 3;
-	return valor;
+	return (n1 + n2 + n3) / 3;	
+}
+
+var idadeTiago = calculaIdade(1988);
+console.log(idadeTiago);
+
+calculaTempoAposentadoria(1988, "Tiago");
+
+function calculaIdade(anoDeNascimento){
+	return 2019 - anoDeNascimento;
+}
+
+function calculaTempoAposentadoria(dataDeNascimento, nome){
+	var idade = calculaIdade(dataDeNascimento);
+	var aposentadoria = 67 - idade;
+
+	if(aposentadoria > 0 ){
+		console.log(nome + " para você se aposentar falta " + aposentadoria + " anos.");
+	}else{
+		console.log("Você ja esta aposentado");
+	}
 }
