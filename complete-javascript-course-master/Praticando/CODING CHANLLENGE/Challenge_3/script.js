@@ -27,21 +27,18 @@ var gorgeta = 0;
 
 for(var conta in contas){
 	if(contas[conta] < 50){
-		gorgeta = contas[conta] * 0.2;
-		valorGorgeta.push(gorgeta.toFixed(2));
-		valorFinal.push(contas[conta] + gorgeta);
+		gorgeta = contas[conta] * 0.2;		
 	}
 	else if(contas[conta] >= 50 && contas[conta] <= 200)
 	{
-		gorgeta = contas[conta] * 0.15;
-		valorGorgeta.push(gorgeta.toFixed(2));
-		valorFinal.push(contas[conta] + gorgeta);
+		gorgeta = contas[conta] * 0.15;		
 	}
 	else{
-		gorgeta = contas[conta] * 0.1;
-		valorGorgeta.push(gorgeta.toFixed(2));
-		valorFinal.push(contas[conta] + gorgeta);
+		gorgeta = contas[conta] * 0.1;		
 	}
+	
+	valorGorgeta.push(gorgeta.toFixed(2));
+	valorFinal.push(contas[conta] + gorgeta);
 
 }
 
