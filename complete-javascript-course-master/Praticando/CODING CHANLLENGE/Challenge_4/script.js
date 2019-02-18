@@ -22,4 +22,43 @@ height). (mass in kg and height in meter).
 
 
 GOOD LUCK
-/*
+*/
+
+var mark = {
+
+	nome: 'Mark',
+	peso: 70,
+	altura: 1,
+	centimetros: 88,
+	calculaImc: function (){
+		var alturaMetros = (this.altura * 100 + parseInt(this.centimetros)) / 100;
+		this.imc = this.peso / (alturaMetros * alturaMetros);
+		return this.imc.toFixed(2);
+	}
+}
+
+var john = {
+
+	nome: 'John',
+	peso: 70,
+	altura: 1,
+	centimetros: 97,
+	calculaImc: function (){
+		var alturaMetros = (this.altura * 100 + parseInt(this.centimetros)) / 100;
+		this.imc = this.peso / (alturaMetros * alturaMetros);
+		return this.imc.toFixed();
+	}
+}
+
+mark.calculaImc()
+john.calculaImc()
+
+if(mark.imc > john.imc){
+	console.log('O Imc do mark é maior do que o do John');
+}
+else if(john.imc > mark.imc){
+	console.log('O imc do john é mairo do que o do Mark');
+}
+else{
+	console.log('Os imc\'s são iguais');
+}
