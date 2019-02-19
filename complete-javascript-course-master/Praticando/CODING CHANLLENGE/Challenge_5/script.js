@@ -32,3 +32,85 @@ and $300, and 25% if the bill is more than $300 (different than John).
 
 GOOD LUCK
 */
+
+var john = {
+
+	nome: 'John',
+	familia: ['Beatriz','Lorenzo','Julia'],
+	restaurantes: [124, 48, 268, 180, 42],
+	valorGorgetas: [],
+	valorFinal: [],
+	calculaGorgeta: function(){
+		var gorgeta = 0;
+		for (var i = 0; i < this.restaurantes.length; i++) {
+			if(this.restaurantes[i] < 50){
+				gorgeta = this.restaurantes[i] * .2;
+			}
+			else if(this.restaurantes[i] >= 50 && this.restaurantes[i] < 200){
+				gorgeta = this.restaurantes[i] * .15;	
+			}
+			else{
+				gorgeta = this.restaurantes[i] * .1;
+			}
+
+			this.valorGorgetas.push(gorgeta);
+			this.valorFinal.push(this.restaurantes[i] + gorgeta);			
+		}			
+	}
+
+}
+
+john.calculaGorgeta();
+console.log(john);
+
+var mark = {
+
+	nome : 'Mark Gbyi',
+	familia: ['Joana', 'Petros', 'Guil'],
+	restaurantes: [77, 375, 110, 45],
+	valorGorgetas: [],
+	valorFinal: [],
+	calculaGorgeta: function (){	
+		for (var i = 0; i < this.restaurantes.length; i++) {
+			
+			var gorgeta;
+			var conta = this.restaurantes[i];
+
+			if(conta < 100){
+				gorgeta = conta * .2;
+			}
+			else if(conta >= 100 && conta < 300){
+				gorgeta = conta * .1;
+			}
+			else{
+				gorgeta = conta * .25;
+			}
+
+			this.valorGorgetas.push(gorgeta);
+			this.valorFinal.push(conta + gorgeta);
+		}
+	}
+}
+
+mark.calculaGorgeta();
+console.log(mark);
+
+function calculaMedia(gorgetas){
+	var media = 0;
+	for (var i = 0; i < gorgetas.length; i++) {
+		media += gorgetas[i];
+	}	
+
+	return media / gorgetas.length;;
+}
+
+mark.media = calculaMedia(mark.valorGorgetas);
+john.media = calculaMedia(john.valorGorgetas)
+
+if(mark.media > john.media){
+	console.log('A média de gorgeta de Mark é maior que a média do John');
+}
+else{
+	console.log('A média de gorgeta de John é maior que a média do Mark');	
+}
+
